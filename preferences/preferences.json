@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "revision": 2,
-  "updated_at": "2026-08-19T00:27:22+08:00",
+  "revision": 3,
+  "updated_at": "2026-08-19T00:35:42+08:00",
   "updated_by": "codex",
   "preferences": [
     {
@@ -21,7 +21,7 @@
     {
       "preference_id": "PREF-003",
       "condition": "ChatGPT及AI服务网络节点地域优先级",
-      "value": "美国 > 新加坡 > 日本 > 香港兜底；仅在节点通过ChatGPT健康检查时使用",
+      "value": "美国 > 新加坡 > 日本 > 英国 > 韩国 > 香港兜底；纳入订阅中所有匹配节点，仅在通过ChatGPT健康检查时使用",
       "status": "confirmed",
       "source_ref": "Codex conversation 2026-08-19"
     }
