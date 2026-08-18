@@ -19,6 +19,15 @@ try {
         Add-Content -LiteralPath $log -Encoding UTF8 -Value ('{0} {1}' -f (Get-Date -Format 'yyyy-MM-ddTHH:mm:sszzz'), $Message)
     }
 
+    function Invoke-GitRetry([string[]]$Arguments, [int]$Attempts = 3) {
+        for ($attempt = 1; $attempt -le $Attempts; $attempt++) {
+            & $GitExe -C $MemoryRoot @Arguments
+            if ($LASTEXITCODE -eq 0) { return $true }
+            if ($attempt -lt $Attempts) { Start-Sleep -Seconds 5 }
+        }
+        return $false
+    }
+
     Get-ChildItem -LiteralPath $MemoryRoot -Recurse -File -Filter '*.json' | ForEach-Object {
         Get-Content -LiteralPath $_.FullName -Raw -Encoding UTF8 | ConvertFrom-Json | Out-Null
     }
@@ -46,8 +55,7 @@ try {
         exit 0
     }
 
-    & $GitExe -C $MemoryRoot fetch origin $Branch
-    if ($LASTEXITCODE -ne 0) { throw 'Fetch failed.' }
+    if (-not (Invoke-GitRetry -Arguments @('fetch','origin',$Branch))) { throw 'Fetch failed after retries.' }
 
     & $GitExe -C $MemoryRoot rebase "origin/$Branch"
     if ($LASTEXITCODE -ne 0) {
@@ -56,8 +64,7 @@ try {
         exit 2
     }
 
-    & $GitExe -C $MemoryRoot push origin $Branch
-    if ($LASTEXITCODE -ne 0) { throw 'Push failed.' }
+    if (-not (Invoke-GitRetry -Arguments @('push','origin',$Branch))) { throw 'Push failed after retries.' }
     Write-SyncLog 'Sync completed.'
 }
 catch {
