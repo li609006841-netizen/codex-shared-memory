@@ -5,6 +5,8 @@ param(
 )
 
 $ErrorActionPreference = 'Stop'
+$GitExe = 'C:\Users\60900\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\git\cmd\git.exe'
+if (-not (Test-Path -LiteralPath $GitExe)) { throw "Git executable not found: $GitExe" }
 $mutex = [System.Threading.Mutex]::new($false, 'Local\CodexSharedMemoryGitSync')
 if (-not $mutex.WaitOne(0)) { exit 0 }
 
@@ -31,30 +33,30 @@ try {
         }
     }
 
-    git -C $MemoryRoot add --all
-    git -C $MemoryRoot diff --cached --quiet
+    & $GitExe -C $MemoryRoot add --all
+    & $GitExe -C $MemoryRoot diff --cached --quiet
     if ($LASTEXITCODE -ne 0) {
-        git -C $MemoryRoot commit -m ('memory: sync {0}' -f (Get-Date -Format 'yyyy-MM-dd HH:mm:ss zzz')) | Out-Null
+        & $GitExe -C $MemoryRoot commit -m ('memory: sync {0}' -f (Get-Date -Format 'yyyy-MM-dd HH:mm:ss zzz')) | Out-Null
         if ($LASTEXITCODE -ne 0) { throw 'Local commit failed.' }
     }
 
-    git -C $MemoryRoot remote get-url origin | Out-Null
+    & $GitExe -C $MemoryRoot remote get-url origin | Out-Null
     if ($LASTEXITCODE -ne 0) {
         Write-SyncLog 'origin is not configured; local snapshot committed only.'
         exit 0
     }
 
-    git -C $MemoryRoot fetch origin $Branch
+    & $GitExe -C $MemoryRoot fetch origin $Branch
     if ($LASTEXITCODE -ne 0) { throw 'Fetch failed.' }
 
-    git -C $MemoryRoot rebase "origin/$Branch"
+    & $GitExe -C $MemoryRoot rebase "origin/$Branch"
     if ($LASTEXITCODE -ne 0) {
-        git -C $MemoryRoot rebase --abort | Out-Null
+        & $GitExe -C $MemoryRoot rebase --abort | Out-Null
         Write-SyncLog 'CONFLICT: automatic sync stopped; manual merge required.'
         exit 2
     }
 
-    git -C $MemoryRoot push origin $Branch
+    & $GitExe -C $MemoryRoot push origin $Branch
     if ($LASTEXITCODE -ne 0) { throw 'Push failed.' }
     Write-SyncLog 'Sync completed.'
 }
