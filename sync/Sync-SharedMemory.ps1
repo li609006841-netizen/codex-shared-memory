@@ -14,15 +14,15 @@ try {
     $log = Join-Path $runtime 'sync.log'
 
     function Write-SyncLog([string]$Message) {
-        Add-Content -LiteralPath $log -Value ('{0} {1}' -f (Get-Date -Format 'yyyy-MM-ddTHH:mm:sszzz'), $Message)
+        Add-Content -LiteralPath $log -Encoding UTF8 -Value ('{0} {1}' -f (Get-Date -Format 'yyyy-MM-ddTHH:mm:sszzz'), $Message)
     }
 
     Get-ChildItem -LiteralPath $MemoryRoot -Recurse -File -Filter '*.json' | ForEach-Object {
-        Get-Content -LiteralPath $_.FullName -Raw | ConvertFrom-Json | Out-Null
+        Get-Content -LiteralPath $_.FullName -Raw -Encoding UTF8 | ConvertFrom-Json | Out-Null
     }
     Get-ChildItem -LiteralPath $MemoryRoot -Recurse -File -Filter '*.jsonl' | ForEach-Object {
         $lineNumber = 0
-        foreach ($line in Get-Content -LiteralPath $_.FullName) {
+        foreach ($line in Get-Content -LiteralPath $_.FullName -Encoding UTF8) {
             $lineNumber++
             if ($line.Trim()) {
                 try { $line | ConvertFrom-Json | Out-Null }
@@ -61,7 +61,7 @@ try {
 catch {
     $runtime = Join-Path $MemoryRoot 'sync\runtime'
     New-Item -ItemType Directory -Path $runtime -Force | Out-Null
-    Add-Content -LiteralPath (Join-Path $runtime 'sync.log') -Value ('{0} ERROR {1}' -f (Get-Date -Format 'yyyy-MM-ddTHH:mm:sszzz'), $_.Exception.Message)
+    Add-Content -LiteralPath (Join-Path $runtime 'sync.log') -Encoding UTF8 -Value ('{0} ERROR {1}' -f (Get-Date -Format 'yyyy-MM-ddTHH:mm:sszzz'), $_.Exception.Message)
     exit 1
 }
 finally {
