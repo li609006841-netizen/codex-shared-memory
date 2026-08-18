@@ -1,0 +1,2 @@
+{"schema_version":1,"pending_id":"PENDING-20260818-001","kind":"verification","text":"确认小C是否已开通im:message.group_at_msg:readonly并订阅im.message.receive_v1","status":"open","source_type":"codex","source_ref":"conversation-2026-08-18","created_at":"2026-08-18T00:00:00+08:00"}
+{"schema_version":1,"pending_id":"PENDING-20260818-002","kind":"conflict","text":"本群免@唤醒：后台权限与事件订阅已开通，但用户实测未唤醒；需确认未@消息是否进入事件日志及服务端是否按chat_id过滤","status":"open","source_type":"user","source_ref":"Codex conversation 2026-08-18","created_at":"2026-08-18T14:45:09+08:00"}

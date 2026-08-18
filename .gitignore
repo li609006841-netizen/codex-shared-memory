@@ -1,0 +1,21 @@
+# Credentials and machine-local configuration
+.env
+*.key
+*.pem
+*.pfx
+credentials*
+secrets*
+sync/local-config.json
+
+# Temporary, lock, conflict, and backup files
+*.tmp
+*.lock
+*.bak
+*-backup-*/
+sync/runtime/
+
+# Editor and OS files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "revision": 4,
+  "active_module": "priority-management",
+  "updated_at": "2026-08-18T14:45:09+08:00",
+  "updated_by": "codex",
+  "last_sync": {
+    "feishu": "2026-08-18T14:40:09+08:00",
+    "codex": "2026-08-18T14:45:09+08:00"
+  },
+  "priorities": {
+    "P0": [
+      "ITEM-20260818-003",
+      "ITEM-20260818-004"
+    ],
+    "P1": [],
+    "P2": []
+  },
+  "blocked": [],
+  "needs_confirmation": [
+    "确认本群未@消息是否进入飞书事件日志",
+    "确认服务端是否按chat_id过滤未@群消息"
+  ],
+  "feishu_bot": {
+    "group_all_messages_permission": "verified",
+    "receive_message_event": "verified",
+    "current_private_group_no_at_wakeup": "failed_user_test",
+    "verification_source": "User test 2026-08-18"
+  }
+}

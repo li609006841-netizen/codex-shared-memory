@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "revision": 1,
+  "updated_at": "2026-08-18T00:00:00+08:00",
+  "updated_by": "codex-bootstrap",
+  "preferences": [
+    {
+      "preference_id": "PREF-001",
+      "condition": "优先事项模块的飞书交互",
+      "value": "私人群期望免@；多人群必须@小C",
+      "status": "confirmed",
+      "source_ref": "Codex conversation 2026-08-17"
+    },
+    {
+      "preference_id": "PREF-002",
+      "condition": "共享记忆存储",
+      "value": "所有显式业务记忆集中在同一非C盘目录",
+      "status": "confirmed",
+      "source_ref": "Codex conversation 2026-08-18"
+    }
+  ]
+}
+
