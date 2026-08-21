@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "revision": 2,
-  "updated_at": "2026-08-21T11:13:30+08:00",
+  "revision": 3,
+  "updated_at": "2026-08-21T11:20:00+08:00",
   "updated_by": "codex",
   "preferences": [
     {
@@ -24,6 +24,13 @@
       "value": "优先美国、新加坡、日本；英国、韩国作为备用地区",
       "status": "confirmed",
       "source_ref": "Codex conversation 2026-08-19"
+    },
+    {
+      "preference_id": "PREF-004",
+      "condition": "持续任务与后台服务",
+      "value": "默认隐藏后台运行，保留日志，不反复弹出终端或对话框",
+      "status": "confirmed",
+      "source_ref": "Codex conversation 2026-08-21"
     }
   ]
 }
