@@ -52,5 +52,6 @@
 - 已实现并验证本地Task Store、任务状态机、执行预算、Agent/设备选择、Capability Gap、Memory Proposal队列和飞书事件标准化适配器。
 - 已验证DeepSeek Harness CLI及headless接口；尚未执行真实模型任务。
 - 已启用“无人值守但受控”的Codex心跳自动推进：自动执行本地验证、静态分析和平台目录内可逆变更；付费模型、飞书OAuth、桌面控制、外部发送、权限扩张和主节点切换进入审批队列。
+- 已注册本地脚本维护任务 `XiaoC-Platform-LocalMaintenance`，每1分钟生成平台健康报告和本地日志；该任务不调用模型、不访问网络、不操作飞书或桌面应用。Codex心跳降为30分钟，仅处理需要推理的变化。
 - 首个自动规划周期已完成3项安全任务：离线控制面验证、Bridge旁路事件契约和Knowledge Index数据/同步水位模型。
 - 基线不包含密钥，未发送飞书消息，未启动或重启外部Agent服务。
