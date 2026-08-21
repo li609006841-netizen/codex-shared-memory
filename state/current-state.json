@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "revision": 4,
+  "revision": 5,
   "active_module": "priority-management",
-  "updated_at": "2026-08-18T14:45:09+08:00",
+  "updated_at": "2026-08-21T11:13:30+08:00",
   "updated_by": "codex",
   "last_sync": {
     "feishu": "2026-08-18T14:40:09+08:00",
@@ -26,5 +26,14 @@
     "receive_message_event": "verified",
     "current_private_group_no_at_wakeup": "failed_user_test",
     "verification_source": "User test 2026-08-18"
+  },
+  "bridge": {
+    "active_device": "current_pc",
+    "old_device_status": "stopped_user_confirmed",
+    "status": "running",
+    "transport": "feishu_long_connection",
+    "pid": 19532,
+    "verified_at": "2026-08-21T11:13:30+08:00",
+    "verification_source": "local process and ws client ready log"
   }
 }

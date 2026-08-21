@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "revision": 1,
-  "updated_at": "2026-08-18T00:00:00+08:00",
-  "updated_by": "codex-bootstrap",
+  "revision": 2,
+  "updated_at": "2026-08-21T11:13:30+08:00",
+  "updated_by": "codex",
   "preferences": [
     {
       "preference_id": "PREF-001",
@@ -17,7 +17,13 @@
       "value": "所有显式业务记忆集中在同一非C盘目录",
       "status": "confirmed",
       "source_ref": "Codex conversation 2026-08-18"
+    },
+    {
+      "preference_id": "PREF-003",
+      "condition": "ChatGPT 网络节点地区选择",
+      "value": "优先美国、新加坡、日本；英国、韩国作为备用地区",
+      "status": "confirmed",
+      "source_ref": "Codex conversation 2026-08-19"
     }
   ]
 }
-
