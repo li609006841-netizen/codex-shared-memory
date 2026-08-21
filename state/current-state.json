@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "revision": 7,
+  "revision": 8,
   "active_module": "priority-management",
-  "updated_at": "2026-08-21T12:20:00+08:00",
+  "updated_at": "2026-08-21T12:47:20+08:00",
   "updated_by": "codex",
   "last_sync": {
     "feishu": "2026-08-18T14:40:09+08:00",
@@ -32,10 +32,10 @@
     "old_device_status": "stopped_user_confirmed",
     "status": "running",
     "transport": "feishu_long_connection",
-    "pid": 21916,
-    "verified_at": "2026-08-21T12:20:00+08:00",
+    "pid": 28856,
+    "verified_at": "2026-08-21T12:47:20+08:00",
     "verification_source": "local process and ws client ready log",
-    "codex_sandbox": "workspace-write",
+    "codex_sandbox": "workspace-write via --approve-for-me",
     "additional_writable_directory": "D:\\CodexSharedMemory"
   },
   "active_chat_id": "oc_79e91a623318ba9dddd51b2443d4f200"
