@@ -1,8 +1,8 @@
 {
     "schema_version":  1,
-    "revision":  10,
+    "revision":  11,
     "active_module":  "priority-management",
-    "updated_at":  "2026-08-22T15:59:06+08:00",
+    "updated_at":  "2026-08-22T16:25:21+08:00",
     "updated_by":  "codex",
     "last_sync":  {
                       "feishu":  "2026-08-18T14:40:09+08:00",
@@ -38,9 +38,9 @@
                    "old_device_status":  "stopped_user_confirmed",
                    "status":  "running",
                    "transport":  "feishu_long_connection",
-                   "pid":  23052,
-                   "verified_at":  "2026-08-22T15:59:06+08:00",
-                   "verification_source":  "local process, OAuth callback and ws client ready logs after upgrade",
+                   "pid":  29336,
+                   "verified_at":  "2026-08-22T16:25:21+08:00",
+                   "verification_source":  "local process, OAuth callback and ws client ready logs after timeout-raise restart",
                    "codex_sandbox":  "workspace-write via --approve-for-me + add-dir(bridge/shared-memory/AgentPlatform)",
                    "additional_writable_directory":  "D:\\CodexSharedMemory;D:\\CodexProjects\\feishu-codex-priority\\bridge;D:\\AgentPlatform",
                    "feishu_user_calendar_task_oauth":  "deployed_pending_user_authorization",
