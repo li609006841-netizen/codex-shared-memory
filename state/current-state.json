@@ -1,50 +1,61 @@
 {
-    "schema_version":  1,
-    "revision":  11,
-    "active_module":  "priority-management",
-    "updated_at":  "2026-08-22T16:25:21+08:00",
-    "updated_by":  "codex",
-    "last_sync":  {
-                      "feishu":  "2026-08-18T14:40:09+08:00",
-                      "codex":  "2026-08-18T14:45:09+08:00"
-                  },
-    "priorities":  {
-                       "P0":  [
-                                  "ITEM-20260818-003",
-                                  "ITEM-20260818-004"
-                              ],
-                       "P1":  [
-
-                              ],
-                       "P2":  [
-
-                              ]
-                   },
-    "blocked":  [
-
-                ],
-    "needs_confirmation":  [
-                               "确认本群未@消息是否进入飞书事件日志",
-                               "确认服务端是否按chat_id过滤未@群消息"
-                           ],
-    "feishu_bot":  {
-                       "group_all_messages_permission":  "verified",
-                       "receive_message_event":  "verified",
-                       "current_private_group_no_at_wakeup":  "route_fixed_pending_user_test",
-                       "verification_source":  "User test 2026-08-18"
-                   },
-    "bridge":  {
-                   "active_device":  "current_pc",
-                   "old_device_status":  "stopped_user_confirmed",
-                   "status":  "running",
-                   "transport":  "feishu_long_connection",
-                   "pid":  29336,
-                   "verified_at":  "2026-08-22T16:25:21+08:00",
-                   "verification_source":  "local process, OAuth callback and ws client ready logs after timeout-raise restart",
-                   "codex_sandbox":  "workspace-write via --approve-for-me + add-dir(bridge/shared-memory/AgentPlatform)",
-                   "additional_writable_directory":  "D:\\CodexSharedMemory;D:\\CodexProjects\\feishu-codex-priority\\bridge;D:\\AgentPlatform",
-                   "feishu_user_calendar_task_oauth":  "deployed_pending_user_authorization",
-                   "file_read_support":  "pdf/docx/xlsx/pptx/txt/csv/md deployed 2026-08-22"
-               },
-    "active_chat_id":  "oc_79e91a623318ba9dddd51b2443d4f200"
+    "schema_version": 1,
+    "revision": 12,
+    "active_module": "priority-management",
+    "updated_at": "2026-08-22T16:52:19+08:00",
+    "updated_by": "codex",
+    "last_sync": {
+        "feishu": "2026-08-18T14:40:09+08:00",
+        "codex": "2026-08-18T14:45:09+08:00"
+    },
+    "priorities": {
+        "P0": [
+            "ITEM-20260818-003",
+            "ITEM-20260818-004"
+        ],
+        "P1": [],
+        "P2": []
+    },
+    "blocked": [],
+    "needs_confirmation": [
+        "确认本群未@消息是否进入飞书事件日志",
+        "确认服务端是否按chat_id过滤未@群消息"
+    ],
+    "feishu_bot": {
+        "group_all_messages_permission": "verified",
+        "receive_message_event": "verified",
+        "current_private_group_no_at_wakeup": "route_fixed_pending_user_test",
+        "verification_source": "User test 2026-08-18"
+    },
+    "bridge": {
+        "active_device": "current_pc",
+        "old_device_status": "stopped_user_confirmed",
+        "status": "running",
+        "transport": "feishu_long_connection",
+        "pid": 7612,
+        "verified_at": "2026-08-22T16:52:19+08:00",
+        "verification_source": "local process, node --check OK, OAuth callback and ws client ready logs after broad-permission restart",
+        "codex_sandbox": "workspace-write via --approve-for-me + add-dir(bridge/shared-memory/AgentPlatform)",
+        "additional_writable_directory": "D:\\CodexSharedMemory;D:\\CodexProjects\\feishu-codex-priority\\bridge;D:\\AgentPlatform",
+        "feishu_user_calendar_task_oauth": "deployed_pending_user_authorization",
+        "file_read_support": "pdf/docx/xlsx/pptx/txt/csv/md deployed 2026-08-22",
+        "feishu_oauth_scopes": [
+            "contact:user.base:readonly",
+            "calendar:calendar:readonly",
+            "task:task:read",
+            "docx:document:readonly",
+            "wiki:wiki:readonly",
+            "sheets:sheet:readonly",
+            "drive:drive:readonly",
+            "bitable:app:readonly",
+            "im:message.p2p_msg:readonly",
+            "im:message.group_at_msg:readonly"
+        ],
+        "new_commands": {
+            "fetch": "/fetch <link> - fetch docx/wiki/sheets/chat content into session",
+            "history": "/history [chat_id] - list recent chat messages"
+        },
+        "pending_user_action": "enable scopes in Feishu dev console (app cli_a94a2d7b66f65cd4) and re-run /authorize"
+    },
+    "active_chat_id": "oc_79e91a623318ba9dddd51b2443d4f200"
 }
